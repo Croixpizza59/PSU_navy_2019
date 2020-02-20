@@ -17,6 +17,7 @@ TEST = tests/tests.c	\
 SRC =	$(SRC_COM)process_info.c	\
 		$(SRC_COM)kill_it.c	\
 		$(SRC_COM)who_sig_me.c	\
+		$(SRC_COM)signal_handler.c	\
 
 SRC_BUILD	=	$(SRC) $(SRC_DIR)main.c
 
