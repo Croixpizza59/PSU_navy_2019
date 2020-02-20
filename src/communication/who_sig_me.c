@@ -9,9 +9,6 @@
 
 void who_sig_me(int one, int sec, pid_t pid)
 {
-    char *str = NULL;
-    char *str_sec = NULL;
-
     strsignal(one);
     strsignal(sec);
     //printf("Signal %s\n%s\n received from %d", str, str_sec, pid);
