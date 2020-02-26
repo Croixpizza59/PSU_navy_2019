@@ -11,8 +11,20 @@
 #include "struct.h"
 #include "proto_lib.h"
 
-int host();
-int client_two(char **av);
+/* user signal */
+int user1(game_t *game);
+int user2(game_t *game, char *pid1);
+
+/* signal_handling */
+void sig_handler(int i, siginfo_t *sig);
+
+/* main functions */
 int main(int ac, char **av);
+
+/* create map */
+int getstat(char const *filepath);
+int create_map(game_t *game);
+char **init_map(game_t *game, char *buffer, int len);
+void display_map(game_t *game);
 
 #endif

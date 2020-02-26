@@ -9,11 +9,15 @@
 
 int main(int ac, char **av)
 {
-    pid_t pid;
+    game_t game = {0};
 
-    if (ac == 1)
-        host();
+    /*if (ac == 1)
+        user1(&game);
     else if (ac == 2)
-        client_two(av);
+        user2(&game, av[1]);
+    else
+        return (84);*/
+    if (create_map(&game) == 84)
+        return (84);
     return (0);
 }

@@ -1,7 +1,0 @@
-{
-    "files.associations": {
-        "proto.h": "c",
-        "struct.h": "c",
-        "signal.h": "c"
-    }
-}
