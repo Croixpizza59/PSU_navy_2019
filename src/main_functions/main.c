@@ -16,6 +16,7 @@ int main(int ac, char **av)
     else if (ac == 2 && av[1][0] == '-' && av[1][1] == 'h') {
         helper();
         return (0);
+        GROS CHIBRAX !!!!!
     }
     if (navy(&game, ac, av) == 84)
         return (84);
