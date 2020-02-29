@@ -13,6 +13,12 @@ void my_free(game_t *game)
         free(game->map.map[y]);
 }
 
+void my_free_pos(game_t *game)
+{
+    for (int y = 0; y != game->map.y_max_pos; y++)
+    free(game->map.map_pos[y]);
+}
+
 int navy(game_t *game, int ac, char **av)
 {
     if (ac == 2) {

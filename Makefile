@@ -40,6 +40,7 @@ SRC_COM = ./src/comm/
 SRC_MAP = ./src/map/
 SRC_GAME = ./src/gameplay/
 SRC_MAIN = ./src/main_functions/
+SRC_CHECK = ./src/checking/
 
 TEST = tests/tests.c	\
 
@@ -49,6 +50,7 @@ SRC	=	$(SRC_MAP)create_map.c	\
 		$(SRC_MAP)display_map.c	\
 		$(SRC_MAIN)navy.c	\
 		$(SRC_MAIN)helper.c	\
+		$(SRC_CHECK)checking.c	\
 		$(SRC_COM)connect.c
 
 SRC_BUILD	=	$(SRC) $(SRC_MAIN)main.c
