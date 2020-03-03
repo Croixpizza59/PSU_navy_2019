@@ -27,6 +27,10 @@ int user1(game_t *game)
     my_putstr("\nwaiting for enemy connection...\n");
     sigemptyset(&signal.sa_mask);
     sigaction(12, &signal, NULL);
+    if (create_map_pos(game, game->user.pos1) == 84) {
+        close(game->map.fd_pos);
+        return (84);
+    }
     while (glob != false)
         usleep(5000);
     return (0);

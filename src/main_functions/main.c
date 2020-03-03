@@ -18,10 +18,6 @@ int main(int ac, char **av)
         helper();
         return (0);
     }
-    if (create_map_pos(&game) == 84) {
-        close(game.map.fd_pos);
-        return (84);
-    }
     if (navy(&game, ac, av) == 84)
         return (84);
     return (0);

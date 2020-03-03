@@ -15,5 +15,9 @@ int user2(game_t *game, char *pid1)
     my_putchar('\n');
     kill(game->user.pid_ennemy, SIGUSR2);
     my_putstr("\nsuccesfully connected\n\n");
+    if (create_map_pos(game, game->user.pos2) == 84) {
+        close(game->map.fd_pos);
+        return (84);
+    }
     return (0);
 }

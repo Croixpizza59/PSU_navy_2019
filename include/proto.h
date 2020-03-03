@@ -33,7 +33,7 @@ char **init_map(game_t *game);
 void display_map(game_t *game);
 
 /* create map pos */
-int create_map_pos(game_t *game);
+int create_map_pos(game_t *game, char *map_pos);
 char **init_map_pos(game_t *game);
 
 /* error_handling */

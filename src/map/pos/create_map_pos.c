@@ -7,16 +7,16 @@
 
 #include "proto.h"
 
-static int basics_actions(game_t *game)
+static int basics_actions(game_t *game, char *map_pos)
 {
-    if ((game->map.size_pos = getstat("pos1")) <= 0) {
+    if ((game->map.size_pos = getstat(map_pos)) <= 0) {
         my_putstr("getstat failed\n");
         return (84);
     }
     else if (!(game->map.buffer_pos = malloc(sizeof(char) *
     (game->map.size_pos))))
         return (84);
-    if ((game->map.fd_pos = open("pos1", O_RDONLY)) <= 0) {
+    if ((game->map.fd_pos = open(map_pos, O_RDONLY)) <= 0) {
         my_putstr("open failed\n");
         return (84);
     }
@@ -28,14 +28,14 @@ static int basics_actions(game_t *game)
     return (0);
 }
 
-int create_map_pos(game_t *game)
+int create_map_pos(game_t *game, char *map_pos)
 {
     game->map.buffer_pos = NULL;
     game->map.x_max_pos = 8;
     game->map.y_max_pos = 4;
     int basics = 0;
 
-    if ((basics = basics_actions(game)) == 84)
+    if ((basics = basics_actions(game, map_pos)) == 84)
         return (84);
     game->map.map_pos = init_map_pos(game);
     if (checking_letter(game) == true) {

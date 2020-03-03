@@ -17,10 +17,12 @@ char **init_map_pos(game_t *game)
         game->map.map_pos[i] = malloc(sizeof(char) * (RAM));
     for (int i = 0; i != game->map.len_pos; i++) {
         if (game->map.buffer_pos[i] == '\n') {
+            printf("%c", game->map.map_pos[y][x]);
             y++;
             x = 0;
         } else {
             game->map.map_pos[y][x] = game->map.buffer_pos[i];
+            printf("%c", game->map.map_pos[y][x]);
             x++;
         }
     }
