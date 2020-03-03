@@ -58,6 +58,9 @@ SRC	=	$(SRC_MAP)create_map.c	\
 		$(SRC_POS)init_map_pos.c	\
 		$(SRC_COM)user1.c	\
 		$(SRC_COM)user2.c	\
+		$(SRC_MAP)find_my_positions.c	\
+		$(SRC_MAP)hare_turtle.c	\
+		$(SRC_MAP)checking_board.c
 
 SRC_BUILD	=	$(SRC) $(SRC_MAIN)main.c
 

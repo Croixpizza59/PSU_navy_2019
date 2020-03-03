@@ -29,6 +29,7 @@ struct user
     char *pos2;
     bool check;
     int count;
+    int nb;
 };
 
 struct map
