@@ -20,7 +20,6 @@ int user1(game_t *game)
     glob = true;
     struct sigaction signal;
     signal.sa_handler = &sig_handler;
-    sleep(1);
     signal.sa_flags = SA_SIGINFO;
     my_putstr("my_pid:\t");
     my_putstr(show_number(getpid()));

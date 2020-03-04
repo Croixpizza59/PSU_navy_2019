@@ -12,7 +12,6 @@ static void display_map_sec(game_t *game)
     int x;
     int y;
 
-    my_putstr("enemy’s positions:\n");
     for (y = 0; y < game->map.y_max; y++) {
         for (x = 0; x < game->map.x_max; x++)
             my_putchar(game->map.map[y][x]);

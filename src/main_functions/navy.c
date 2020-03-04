@@ -23,8 +23,9 @@ int navy(game_t *game, int ac, char **av)
         close(game->map.fd);
         return (84);
     }
-    my_putchar('\n');
+    display_map(game);
     my_free(game);
     close(game->map.fd);
+    my_putchar('\n');
     return (0);
 }

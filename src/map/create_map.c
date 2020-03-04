@@ -23,6 +23,5 @@ int create_map(game_t *game)
     game->map.buffer, game->map.size)) <= 0)
         return (84);
     game->map.map = init_map(game);
-    display_map(game);
     return (0);
 }
