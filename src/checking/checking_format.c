@@ -10,7 +10,7 @@
 static bool check_my_point(game_t *game)
 {
     int x = 1;
-    int x_sec = 4;
+    int x_sec = 5;
 
     for (int y = 0; y < game->map.y_max_pos; y++) {
         if (CURSOR(y, x) != ':')
