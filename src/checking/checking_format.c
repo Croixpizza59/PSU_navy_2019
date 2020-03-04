@@ -10,22 +10,24 @@
 static bool check_my_point(game_t *game)
 {
     int x = 1;
-    int x_sec = 5;
+    int x_sec = 4;
 
-    for (int y = 0; y < game->map.y_max_pos; y++) {
-        if (CURSOR(y, x) != ':')
+    for (int y = 0; y < 4; y++) {
+        if (CURSOR(y, x) != ':') {
             CHECK = true;
+        }
     }
-    for (int y = 0; y < game->map.y_max_pos; y++) {
-        if (game->map.map_pos[y][x_sec] != ':')
+    for (int y = 0; y < 4; y++) {
+        if (game->map.map_pos[y][x_sec] != ':') {
             CHECK = true;
+        }
     }
     return (CHECK);
 }
 
 bool check_my_formater(game_t *game)
 {
-    if (game->map.len_pos != 31)
+    if (game->map.len_pos > 32)
         CHECK = true;
     if (check_my_point(game) == true)
         CHECK = true;

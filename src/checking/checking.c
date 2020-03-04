@@ -27,8 +27,8 @@ bool checking_letter(game_t *game)
 
     if (check_my_formater(game) == true)
         CHECK = true;
-    for (y = 0; y < game->map.y_max_pos - 1; y++) {
-        for (x = 0; x < game->map.x_max_pos - 1; x++)
+    for (y = 0; y < game->map.y_max_pos; y++) {
+        for (x = 0; x < game->map.x_max_pos; x++)
             if ((check_two = checking_letter_two(game, x, y)) == true)
                 CHECK = true;
     }
