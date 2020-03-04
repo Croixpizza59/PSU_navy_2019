@@ -17,7 +17,9 @@ void sig_handler(int i, siginfo_t *sig, void *test)
 
 int user1(game_t *game)
 {
+    bool check = false;
     glob = true;
+
     struct sigaction signal;
     signal.sa_handler = &sig_handler;
     signal.sa_flags = SA_SIGINFO;
@@ -26,10 +28,17 @@ int user1(game_t *game)
     my_putstr("\nwaiting for enemy connection...\n");
     sigemptyset(&signal.sa_mask);
     sigaction(12, &signal, NULL);
+    if (create_map(game) == 84) {
+        my_free(game);
+        close(game->map.fd);
+        return (84);
+    }
     if (create_map_pos(game, game->user.pos1) == 84) {
         close(game->map.fd_pos);
         return (84);
     }
+    if ((find_my_position(game)) == true)
+        return (84);
     while (glob != false)
         usleep(5000);
     return (0);

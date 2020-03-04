@@ -7,7 +7,7 @@
 
 #include "proto.h"
 
-static void display_map_sec(game_t *game)
+void display_map_sec(game_t *game)
 {
     int x;
     int y;
@@ -20,13 +20,16 @@ static void display_map_sec(game_t *game)
     my_putchar('\n');
 }
 
-int find_my_position(game_t *game)
+bool find_my_position(game_t *game)
 {
     int nb = 2;
     int i = 0;
     int j = 0;
     int k = 0;
     int a = 0;
+    int count1 = 0;
+    int count2 = 0;
+    int check = false;
 
     for (int y = 0; y < Y_MAX; y++) {
         for (int x = 0; x < 3; x++) {
@@ -36,24 +39,31 @@ int find_my_position(game_t *game)
                 a = checking_board(game, 5, y, i);
                 j = game->map.map_pos[y][x + 1] - '0';
                 k = game->map.map_pos[y][6] - '0';
-                if (j == game->map.map_pos[y][6] - '0') {
+                if (j == game->map.map_pos[y][6] - '0') { // horizontal
                     game->map.map[j + 1][i] = nb + '0';
                     while (i <= a) {
                         game->map.map[j + 1][i] = nb + '0';
                         i += 2;
+                        ++count1;
+                    }
+                    if (count1 != (game->map.map_pos[y][0] - '0')) {
+                        check = true;
                     }
                 }
-                else {
+                else { // vertical
                     game->map.map[j + 1][i] = nb + '0';
                     while (j <= k) {
                         game->map.map[j + 1][i] = nb + '0';
                         j++;
+                        ++count2;
+                    }
+                    if (count2 != (game->map.map_pos[y][0])) {
+                        check = true;
                     }
                 }
             }
         }
         ++nb;
     }
-    display_map_sec(game);
-    return (0);
+    return (check);
 }

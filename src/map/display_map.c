@@ -7,11 +7,14 @@
 
 #include "proto.h"
 
-void display_map(game_t *game)
+bool display_map(game_t *game)
 {
+    bool check = false;
+
     my_putstr("my positions:\n");
-    find_my_position(game);
+    display_map_sec(game);
     my_putstr("enemy’s positions\n");
     my_putstr(game->map.buffer);
     my_putchar('\n');
+    return (check);
 }

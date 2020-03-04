@@ -30,14 +30,15 @@ void helper();
 int getstat(char const *filepath);
 int create_map(game_t *game);
 char **init_map(game_t *game);
-void display_map(game_t *game);
-int find_my_position(game_t *game);
+bool display_map(game_t *game);
+bool find_my_position(game_t *game);
 
 /* create map pos */
 int create_map_pos(game_t *game, char *map_pos);
 char **init_map_pos(game_t *game);
 int checking_board(game_t *game, int x, int y, int i);
 char **turtle_hare_x(game_t *game);
+void display_map_sec(game_t *game);
 
 /* error_handling */
 bool check_my_formater(game_t *game);
