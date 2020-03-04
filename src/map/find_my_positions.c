@@ -31,7 +31,7 @@ bool find_my_position(game_t *game)
     int count2 = 0;
     int check = false;
 
-    for (int y = 0; y < Y_MAX; y++) {
+    for (int y = 0; y < Y_MAX - 1; y++) {
         for (int x = 0; x < 3; x++) {
             if (game->map.map_pos[y][x] == ':') {
                 ++x;
@@ -47,6 +47,7 @@ bool find_my_position(game_t *game)
                         ++count1;
                     }
                     if (count1 != (game->map.map_pos[y][0] - '0')) {
+                        printf("count1 = %d\n map_pos = %c\n", count1, game->map.map_pos[y][0]);
                         check = true;
                     }
                 }
@@ -57,7 +58,8 @@ bool find_my_position(game_t *game)
                         j++;
                         ++count2;
                     }
-                    if (count2 != (game->map.map_pos[y][0])) {
+                    if (count2 != (game->map.map_pos[y][0] - '0')) {
+                        printf("count2 = %d\n map_pos2 = %c\n", count2, game->map.map_pos[y][0]);
                         check = true;
                     }
                 }
