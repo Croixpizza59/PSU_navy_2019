@@ -37,5 +37,6 @@ int user2(game_t *game, char *pid1)
     }
     if ((check = find_my_position(game)) == true)
         return (84);
+    display_map(game);
     return (0);
 }

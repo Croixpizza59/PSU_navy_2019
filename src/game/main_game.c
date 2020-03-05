@@ -15,14 +15,15 @@ int main_game(game_t *game)
     bool condition = false;
     int check_buffer = 0;
 
-    my_putstr("Getline :\t");
     while (condition != true) {
+        my_putstr("attack:\t");
         if ((get_rd = getline(&buffer, &n, stdin)) <= 0)
             return (84);
         if ((check_buffer = check_my_buffer(game, buffer)) != 84)
             condition = true;
         else
-            my_putstr("error in argument\n");
+            my_putstr("wrong position\n");
+        //signal_checking(game, buffer[0], buffer[1]);
     }
     return (0);
 }

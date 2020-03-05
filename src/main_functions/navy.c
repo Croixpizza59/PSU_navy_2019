@@ -18,10 +18,7 @@ int navy(game_t *game, int ac, char **av)
         if (user2(game, av[1]) == 84)
             return (84);
     }
-    display_map(game);
     my_free(game);
     close(game->map.fd);
-    my_putchar('\n');
-    main_game(game);
     return (0);
 }

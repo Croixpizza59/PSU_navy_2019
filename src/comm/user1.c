@@ -7,18 +7,14 @@
 
 #include "proto.h"
 
-bool glob = true;
-
 void sig_handler(int i, siginfo_t *sig, void *test)
 {
     my_putstr("\nenemy connected\n\n");
-    glob = false;
 }
 
 static int prepare_my_user1(game_t *game)
 {
     bool check = false;
-    glob = true;
 
     struct sigaction signal;
     signal.sa_handler = &sig_handler;
@@ -48,7 +44,9 @@ int user1(game_t *game)
     }
     if ((find_my_position(game)) == true)
         return (84);
-    while (glob != false)
-        usleep(5000);
+    pause();
+    display_map(game);
+    my_putchar('\n');
+    main_game(game);
     return (0);
 }
