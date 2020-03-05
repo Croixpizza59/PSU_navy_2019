@@ -22,5 +22,6 @@ int navy(game_t *game, int ac, char **av)
     my_free(game);
     close(game->map.fd);
     my_putchar('\n');
+    main_game(game);
     return (0);
 }

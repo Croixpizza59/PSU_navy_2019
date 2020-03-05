@@ -43,6 +43,7 @@ SRC_MAIN = ./src/main_functions/
 SRC_CHECK = ./src/checking/
 SRC_POS = ./src/map/pos/
 SRC_ORIGIN = ./src/map/origin/
+SRC_GAME = ./src/game/
 
 TEST = tests/tests.c	\
 
@@ -64,6 +65,8 @@ SRC	=	$(SRC_ORIGIN)create_map.c	\
 		$(SRC_POS)axes.c	\
 		$(SRC_POS)display_map_sec.c	\
 		$(SRC_POS)basics_actions.c	\
+		$(SRC_GAME)main_game.c	\
+		$(SRC_GAME)check_my_buffer.c	\
 
 SRC_BUILD	=	$(SRC) $(SRC_MAIN)main.c
 

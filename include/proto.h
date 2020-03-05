@@ -48,4 +48,8 @@ void my_free(game_t *game);
 bool x_axes(game_t *game, int y, bool check);
 bool y_axes(game_t *game, int y, bool check);
 
+// game
+int check_my_buffer(game_t *game, char *buffer);
+int main_game(game_t *game);
+
 #endif
