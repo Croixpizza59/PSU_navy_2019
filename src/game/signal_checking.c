@@ -26,19 +26,27 @@ static int before_check(char buffer, int i)
     return (i);
 }
 
-// exemple : B2
-
 int signal_checking(game_t *game, char buffer, char buffer_sec)
 {
     int crypt = 0;
     int crypt_sec = 0;
-    int signal = 0;
+    int lines = 0;
+    int colms = 0;
 
     crypt = before_check(buffer, crypt);
     crypt_sec = buffer_sec - '0';
 
-    while (signal < crypt) {
-        //kill
+    while (lines < crypt) { // horizontal
+        kill(game->user.pid_user2, SIGUSR1);
+        lines++;
+        usleep(5000);
     }
-
+    kill(game->user.pid_user2, SIGUSR2); // separation
+    while (colms < crypt_sec) { // vertical
+        kill(game->user.pid_user2, SIGUSR1);
+        colms++;
+        usleep(5000);
+    }
+    kill(game->user.pid_user2, SIGUSR2); // final
+    return (0);
 }

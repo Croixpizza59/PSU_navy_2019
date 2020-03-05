@@ -26,6 +26,7 @@ typedef struct pos pos_t;
 struct user
 {
     int pid_ennemy;
+    int pid_user2;
     char *pos1;
     char *pos2;
     bool check;

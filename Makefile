@@ -67,6 +67,7 @@ SRC	=	$(SRC_ORIGIN)create_map.c	\
 		$(SRC_POS)basics_actions.c	\
 		$(SRC_GAME)main_game.c	\
 		$(SRC_GAME)check_my_buffer.c	\
+		$(SRC_GAME)signal_checking.c	\
 
 SRC_BUILD	=	$(SRC) $(SRC_MAIN)main.c
 

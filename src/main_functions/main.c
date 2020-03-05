@@ -7,6 +7,8 @@
 
 #include "proto.h"
 
+int global = 0;
+
 int main(int ac, char **av)
 {
     game_t game = {0};

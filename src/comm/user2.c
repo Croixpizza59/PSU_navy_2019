@@ -38,5 +38,7 @@ int user2(game_t *game, char *pid1)
     if ((check = find_my_position(game)) == true)
         return (84);
     display_map(game);
+    my_putstr("\nwaiting for ennemy's attack...\n");
+    pause();
     return (0);
 }

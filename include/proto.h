@@ -12,6 +12,8 @@
 #include "proto_lib.h"
 #include "macro.h"
 
+extern int global;
+
 /* user signal */
 int user1(game_t *game);
 int user2(game_t *game, char *pid1);

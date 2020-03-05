@@ -9,6 +9,9 @@
 
 void sig_handler(int i, siginfo_t *sig, void *test)
 {
+    (void)i;
+    (void)test;
+    global = sig->si_pid;
     my_putstr("\nenemy connected\n\n");
 }
 
@@ -45,6 +48,7 @@ int user1(game_t *game)
     if ((find_my_position(game)) == true)
         return (84);
     pause();
+    game->user.pid_user2 = global;
     display_map(game);
     my_putchar('\n');
     main_game(game);

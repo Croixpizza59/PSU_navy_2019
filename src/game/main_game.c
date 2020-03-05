@@ -23,7 +23,7 @@ int main_game(game_t *game)
             condition = true;
         else
             my_putstr("wrong position\n");
-        //signal_checking(game, buffer[0], buffer[1]);
+        signal_checking(game, buffer[0], buffer[1]);
     }
     return (0);
 }

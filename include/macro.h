@@ -16,7 +16,6 @@
 #define LETTER(i) (i >= 'A' && i <= 'Z')
 #define NUMBER(i) (i >= '1' && i <= '9')
 
-
 // define positions structure
 
 #define J game->pos.j
