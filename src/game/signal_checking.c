@@ -21,6 +21,8 @@ static int before_check(char buffer, int i)
         i = 10;
     if (buffer == 'F')
         i = 12;
+    if (buffer == 'G')
+        i = 14;
     if (buffer == 'H')
         i = 16;
     return (i);

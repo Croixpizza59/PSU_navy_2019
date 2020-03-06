@@ -34,6 +34,7 @@ struct user
 {
     int pid_ennemy;
     int pid_user2;
+    int pid_user1;
     char *pos1;
     char *pos2;
     bool check;

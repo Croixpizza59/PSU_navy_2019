@@ -19,10 +19,18 @@ static int prepare_my_user2(game_t *game, char *pid1)
     return (0);
 }
 
+static test(game_t *game)
+{
+    my_putstr("\nwaiting for ennemy's attack...\n");
+    receive_signal(game);
+    main_game_sec(game);
+}
+
 int user2(game_t *game, char *pid1)
 {
     int user2 = 0;
     bool check = false;
+    game->user.pid_user1 = to_number(pid1);
 
     if ((user2 = prepare_my_user2(game, pid1)) == 84)
         return (84);
@@ -38,7 +46,7 @@ int user2(game_t *game, char *pid1)
     if ((check = find_my_position(game)) == true)
         return (84);
     display_map(game);
-    my_putstr("\nwaiting for ennemy's attack...\n");
-    receive_signal(game);
+    while (1)
+        test(game);
     return (0);
 }
