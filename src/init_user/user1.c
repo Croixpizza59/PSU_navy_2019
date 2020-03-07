@@ -11,7 +11,7 @@ static int test_usr1(game_t *game)
 {
     if (main_game(game) == 84)
         return (84);
-    my_putstr("waiting for ennemy's attack\n");
+    my_putstr("waiting for ennemy's attack...\n");
     global = 0;
     receive_signal(game);
     map_assignment_user1(game);

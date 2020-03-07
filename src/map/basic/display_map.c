@@ -26,7 +26,7 @@ bool display_map(game_t *game)
 
     my_putstr("my positions:\n");
     display_map_sec(game);
-    my_putstr("enemy’s positions\n");
+    my_putstr("enemy’s positions:\n");
     display_map_enem(game);
     return (check);
 }
