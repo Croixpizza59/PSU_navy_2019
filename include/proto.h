@@ -38,6 +38,7 @@ bool x_axes(game_t *game, int y, bool check);
 bool y_axes(game_t *game, int y, bool check);
 bool display_map(game_t *game);
 void display_map_sec(game_t *game);
+int create_map_sec(game_t *game);
 
     //checking//
 bool checking_letter(game_t *game);
@@ -48,10 +49,19 @@ int main_game_sec(game_t *game);
 int main_game(game_t *game);
 int signal_checking_sec(game_t *game, char buffer, char buffer_sec);
 int before_check_sec(char buffer, int i);
+char **init_map_sec(game_t *game);
+char find_letter(char buffer, int i);
+void print_values(char letter, int nb, char *str);
 
     //assignment//
-void map_assignment(game_t *game);
+void map_assignment_user1(game_t *game);
+void map_assignment_user2(game_t *game);
 int receive_signal(game_t *game);
 void sig_handler_sec(int signal, siginfo_t *sig, void *test);
+void who_kill_who(game_t *game);
 
+// who win
+int who_win_user1(game_t *game);
+int who_win_user2(game_t *game);
+int recept_win(void);
 #endif

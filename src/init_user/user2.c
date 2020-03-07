@@ -9,11 +9,18 @@
 
 static int test(game_t *game)
 {
-    my_putstr("\nwaiting for ennemy's attack...\n");
-    receive_signal(game);
-    main_game_sec(game);
-    map_assignment(game);
-    display_map(game);
+    while (1) {
+        my_putstr("\nwaiting for ennemy's attack...\n");
+        receive_signal(game);
+        main_game_sec(game);
+        global = 0;
+        who_kill_who(game);
+        map_assignment_user2(game);
+        display_map(game);
+        recept_win();
+        who_win_user2(game);
+    }
+    return (0);
 }
 
 int user2(game_t *game, char *pid1)
@@ -24,9 +31,9 @@ int user2(game_t *game, char *pid1)
 
     if ((user2 = prepare_my_user2(game, pid1)) == 84)
         return (84);
+    create_map_sec(game);
     if (create_map(game) == 84) {
         my_free(game);
-        close(game->map.fd);
         return (84);
     }
     if (create_map_pos(game, game->user.pos) == 84) {
@@ -36,7 +43,6 @@ int user2(game_t *game, char *pid1)
     if ((check = find_my_position(game)) == true)
         return (84);
     display_map(game);
-    while (1)
-        test(game);
+    test(game);
     return (0);
 }

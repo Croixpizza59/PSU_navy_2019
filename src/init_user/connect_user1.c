@@ -25,6 +25,7 @@ int prepare_my_user1(game_t *game)
     my_putstr("\nwaiting for enemy connection...\n");
     sigemptyset(&signal.sa_mask);
     sigaction(12, &signal, NULL);
+    create_map_sec(game);
     if (create_map(game) == 84) {
         my_free(game);
         close(game->map.fd);

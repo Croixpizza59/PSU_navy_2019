@@ -11,11 +11,14 @@ static int test_usr1(game_t *game)
 {
     if (main_game(game) == 84)
         return (84);
-    printf("waiting for ennemy's attack\n");
+    my_putstr("waiting for ennemy's attack\n");
     global = 0;
     receive_signal(game);
-    map_assignment(game);
+    map_assignment_user1(game);
+    who_kill_who(game);
     display_map(game);
+    who_win_user1(game);
+    return (0);
 }
 
 int user1(game_t *game)
@@ -34,7 +37,7 @@ int user1(game_t *game)
     game->user.pid_user2 = global;
     display_map(game);
     my_putchar('\n');
-    while(1) {
+    while (1) {
         if (test_usr1(game) == 84)
             return (84);
     }

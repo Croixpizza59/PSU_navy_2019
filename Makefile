@@ -39,6 +39,9 @@ SRC	=	$(SRC_CHK)check_letter.c	\
 		$(SRC_MAP_POS)create_map_pos.c	\
 		$(SRC_MAP_POS)display_map_sec.c	\
 		$(SRC_MAP_POS)find_positions.c	\
+		$(SRC_GAME)who_kill_who.c	\
+		$(SRC_GAME)who_win.c	\
+		$(SRC_GAME)recept_win.c	\
 
 SRC_BUILD	=	$(SRC) $(SRC_MAIN)main.c
 

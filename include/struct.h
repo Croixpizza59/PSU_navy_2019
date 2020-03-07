@@ -33,23 +33,32 @@ struct user
     bool check;
     int count;
     int nb;
+    int crypt;
+    int crypt_sec;
+    char *receptor;
+    char *type;
 };
 
 struct map
 {
     char **map;
+    char **map2;
     char **map_pos;
     int x_max_pos;
     int y_max_pos;
     int x_max;
     int y_max;
     int fd;
+    int fd2;
     int fd_pos;
     int size;
+    int size2;
     int size_pos;
     int len;
+    int len2;
     int len_pos;
     char *buffer;
+    char *buffer2;
     char *buffer_pos;
 };
 

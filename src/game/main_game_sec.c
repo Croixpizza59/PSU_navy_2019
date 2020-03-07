@@ -41,6 +41,7 @@ int main_game_sec(game_t *game)
         if (get_rd <= 0)
             return (84);
         if ((check_buffer = check_my_buffer(buffer)) != 84) {
+            game->user.receptor = buffer;
             signal_checking_sec(game, buffer[0], buffer[1]);
             break;
         }
