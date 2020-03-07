@@ -26,6 +26,5 @@ int main_game(game_t *game)
         else
             my_putstr("wrong position\n");
     }
-    map_assignment(game);
     return (0);
 }

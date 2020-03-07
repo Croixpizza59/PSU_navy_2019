@@ -12,6 +12,8 @@ static int test(game_t *game)
     my_putstr("\nwaiting for ennemy's attack...\n");
     receive_signal(game);
     main_game_sec(game);
+    map_assignment(game);
+    display_map(game);
 }
 
 int user2(game_t *game, char *pid1)
