@@ -53,5 +53,6 @@ void who_kill_who(game_t *game);
 int who_win_user1(game_t *game);
 int who_win_user2(game_t *game);
 int recept_win(void);
+bool checking_lenght(game_t *game);
 
 #endif

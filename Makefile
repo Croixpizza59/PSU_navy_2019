@@ -42,6 +42,7 @@ SRC	=	$(SRC_CHK)check_letter.c	\
 		$(SRC_GAME)who_kill_who.c	\
 		$(SRC_GAME)who_win.c	\
 		$(SRC_GAME)recept_win.c	\
+		$(SRC_CHK)checking_lenght.c	\
 
 SRC_BUILD	=	$(SRC) $(SRC_MAIN)main.c
 
