@@ -15,6 +15,8 @@ static int game_connect_user1(navy_t *navy)
         global = 0;
         hit_or_miss(navy);
         receive_signals(navy);
+        draw_ennem_actions(navy);
+        navy->coord.hm = 0;
         map_stocking_user1(navy);
         display_map(navy);
     }
@@ -23,7 +25,7 @@ static int game_connect_user1(navy_t *navy)
 
 int player1_funct(navy_t *navy)
 {
-    if (connection_user1(navy) == 84)
+    if (connection_user1() == 84)
         return (84);
     if (map_maker(navy) == 84)
         return (84);

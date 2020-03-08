@@ -36,6 +36,7 @@ struct user2
 
 struct coord
 {
+    int hm;
     int crypt;
     int crypt_sec;
     int lines;

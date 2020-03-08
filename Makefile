@@ -39,6 +39,7 @@ SRC	=	$(SRC_CHK)checking_letter.c	\
 		$(SRC_PLAY)player_2_funct.c	\
 		$(SRC_DIR)navy_funct.c	\
 		$(SRC_DIR)my_free.c	\
+		$(SRC_GAME)draw_ennem_actions.c	\
 
 SRC_BUILD	=	$(SRC) $(SRC_DIR)main.c
 

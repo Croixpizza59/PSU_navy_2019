@@ -29,7 +29,7 @@ int receive_signals(navy_t *navy)
 {
     struct sigaction signal;
 
-    my_putstr("waiting for ennemy's attack...\n");
+    my_putstr("waiting for enemy's attack...\n");
     signal.sa_sigaction = &sig_handler_sig2;
     signal.sa_flags = SA_RESTART;
     while (global == 0) {

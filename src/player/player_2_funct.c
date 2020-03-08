@@ -11,6 +11,7 @@ static int game_connect_user2(navy_t *navy)
 {
     while (1) {
         receive_signals(navy);
+        navy->coord.hm = 0;
         map_stocking_user2(navy);
         if (get_input_user2(navy) == 84)
             return (84);

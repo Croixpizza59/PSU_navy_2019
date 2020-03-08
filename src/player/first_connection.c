@@ -15,7 +15,7 @@ static void sig_handler(int signal, siginfo_t *sig, void *stream)
     my_putstr("\nenemy connected\n\n");
 }
 
-int connection_user1(navy_t *navy)
+int connection_user1(void)
 {
     struct sigaction signal;
     signal.sa_sigaction = &sig_handler;
@@ -36,6 +36,6 @@ int connection_user2(navy_t *navy, char *pid1)
     my_putchar('\n');
     if (kill(navy->verif.pid_ennemy, SIGUSR2) == -1)
         return (84);
-    my_putstr("succesfully connected\n\n");
+    my_putstr("successfully connected\n\n");
     return (0);
 }

@@ -70,9 +70,12 @@ void hit_or_miss(navy_t *navy)
         sign = global;
     }
     buffer = find_letter(buffer, navy->coord.crypt);
-    if (sign == 1)
+    if (sign == 1) {
         cond(buffer, navy, "hit", 'x');
-    else if (sign == 2)
+        navy->coord.hm = 1;
+    } else if (sign == 2) {
         cond(buffer, navy, "missed", 'o');
+        navy->coord.hm = 2;
+    }
     global = 0;
 }

@@ -8,7 +8,7 @@
 #ifndef PROTO_USER1
 #define PROTO_USER1
 
-int connection_user1(navy_t *navy);
+int connection_user1(void);
 int signal_sending_user1(navy_t *navy, char buffer, char buffer_sec);
 int get_input_user1(navy_t *navy);
 void map_stocking_user1(navy_t *navy);

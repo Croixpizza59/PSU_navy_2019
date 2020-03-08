@@ -37,5 +37,6 @@ bool checking_lenght(navy_t *navy);
 bool check_my_formater(navy_t *navy);
 int find_number(char buffer, int i);
 int getstat(char const *filepath);
+void draw_ennem_actions(navy_t *navy);
 
 #endif
