@@ -1,13 +1,13 @@
 /*
 ** EPITECH PROJECT, 2020
-** find_positions.c
+** navy
 ** File description:
-** find_positions
+** replace '.' by boat number
 */
 
 #include "proto.h"
 
-static int checking_board(game_t *game, int x, int y, int i)
+static int checking_board(navy_t *navy, int x, int y, int i)
 {
     if (CURSOR(y, x) == 'A')
         i = 2;
@@ -28,23 +28,23 @@ static int checking_board(game_t *game, int x, int y, int i)
     return (i);
 }
 
-bool find_my_position(game_t *game)
+bool replace_boat_positions(navy_t *navy)
 {
     NB = 2;
     bool check = false;
 
     for (int y = 0; y < Y_MAX - 1; y++) {
         for (int x = 0; x < 3; x++) {
-            if (game->map.map_pos[y][x] == ':') {
+            if (navy->map_pos.map2[y][x] == ':') {
                 ++x;
-                I = checking_board(game, x, y, I);
-                A = checking_board(game, 5, y, I);
-                J = game->map.map_pos[y][x + 1] - '0';
-                K = game->map.map_pos[y][6] - '0';
-                if (J == game->map.map_pos[y][6] - '0')
-                    check = x_axes(game, y, check);
+                I = checking_board(navy, x, y, I);
+                A = checking_board(navy, 5, y, I);
+                J = navy->map_pos.map2[y][x + 1] - '0';
+                K = navy->map_pos.map2[y][6] - '0';
+                if (J == navy->map_pos.map2[y][6] - '0')
+                    check = x_axes(navy, y, check);
                 else
-                    check = y_axes(game, y, check);
+                    check = y_axes(navy, y, check);
             }
         }
         ++NB;

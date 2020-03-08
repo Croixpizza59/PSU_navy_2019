@@ -7,44 +7,40 @@
 
 LIB_DIR = ./lib/
 
-SRC_CHK	=	./src/checking/
-SRC_GAME	=	./src/game/
-SRC_INIT	=	./src/init_user/
-SRC_MAIN	=	./src/main_functions/
-SRC_MAP_BAS	=	./src/map/basic/
-SRC_MAP_POS	=	./src/map/map_pos/
-
 TEST = tests/tests.c	\
 
-SRC	=	$(SRC_CHK)check_letter.c	\
-		$(SRC_CHK)checking_format.c	\
-		$(SRC_GAME)check_my_buffer.c	\
-		$(SRC_GAME)main_game_sec.c	\
-		$(SRC_GAME)main_game.c	\
-		$(SRC_GAME)map_assigment.c	\
-		$(SRC_GAME)receive_signals.c	\
-		$(SRC_GAME)signal_checking_sec.c	\
-		$(SRC_GAME)signals_checking.c	\
-		$(SRC_INIT)connect_user1.c	\
-		$(SRC_INIT)user1.c	\
-		$(SRC_INIT)user2.c	\
-		$(SRC_MAIN)helper.c	\
-		$(SRC_MAIN)my_free.c	\
-		$(SRC_MAIN)navy.c	\
-		$(SRC_MAP_BAS)create_map.c	\
-		$(SRC_MAP_BAS)display_map.c	\
-		$(SRC_MAP_BAS)getstat.c	\
-		$(SRC_MAP_BAS)init_map.c	\
-		$(SRC_MAP_POS)axes.c	\
-		$(SRC_MAP_POS)create_map_pos.c	\
-		$(SRC_MAP_POS)display_map_sec.c	\
-		$(SRC_MAP_POS)find_positions.c	\
-		$(SRC_GAME)who_kill_who.c	\
-		$(SRC_GAME)who_win.c	\
-		$(SRC_GAME)recept_win.c	\
-		$(SRC_CHK)checking_lenght.c	\
+SRC_DIR = ./src/
+SRC_CHK = ./src/checking_boat/
+SRC_GAME = ./src/game/
+SRC_MAP = ./src/map/
+SRC_PLAY = ./src/player/
 
-SRC_BUILD	=	$(SRC) $(SRC_MAIN)main.c
+SRC	=	$(SRC_CHK)checking_letter.c	\
+		$(SRC_CHK)checking_lenght.c	\
+		$(SRC_CHK)checking_format.c	\
+		$(SRC_GAME)check_my_input.c	\
+		$(SRC_GAME)get_input.c	\
+		$(SRC_GAME)hit_or_miss.c	\
+		$(SRC_GAME)map_stocking.c	\
+		$(SRC_GAME)receive_signals.c	\
+		$(SRC_GAME)replace_boat_positions.c	\
+		$(SRC_GAME)signal_sending_user1.c	\
+		$(SRC_GAME)signal_sending_user2.c	\
+		$(SRC_MAP)axes.c	\
+		$(SRC_MAP)create_map_pos.c	\
+		$(SRC_MAP)create_map.c	\
+		$(SRC_MAP)display_map.c	\
+		$(SRC_MAP)getstat.c	\
+		$(SRC_MAP)init_map_pos.c	\
+		$(SRC_MAP)init_map.c	\
+		$(SRC_MAP)map_maker.c	\
+		$(SRC_PLAY)first_connection.c	\
+		$(SRC_PLAY)player_1_funct.c	\
+		$(SRC_PLAY)player_2_funct.c	\
+		$(SRC_DIR)navy_funct.c	\
+		$(SRC_DIR)my_free.c	\
+
+SRC_BUILD	=	$(SRC) $(SRC_DIR)main.c
 
 NAME = navy
 
@@ -74,7 +70,7 @@ clean:
 	@rm -f $(OBJ)
 	@rm -f $(LIB_DIR)*.a
 	@rm -f $(SRC_DIR)*.gc*
-	@rm -f $(SRC_COM)*.gc*
+	@rm -f $(SRC_PLAY)*.gc*
 	@rm -f $(SRC_GAME)*.gc*
 	@rm -f $(SRC_MAP)*.gc*
 	@rm -f $(LIB_DIR)*.o

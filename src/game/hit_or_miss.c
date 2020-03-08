@@ -1,13 +1,13 @@
 /*
 ** EPITECH PROJECT, 2020
-** PSU_navy_2019
+** navy
 ** File description:
-** who_kill_who
+** hit_or_miss
 */
 
 #include "proto.h"
 
-void print_values(char letter, int nb, char *str)
+static void print_values(char letter, int nb, char *str)
 {
     my_putchar(letter);
     my_putstr(show_number(nb));
@@ -16,7 +16,7 @@ void print_values(char letter, int nb, char *str)
     my_putstr("\n\n");
 }
 
-char find_letter(char buffer, int i)
+static char find_letter(char buffer, int i)
 {
     if (i == 2)
         buffer = 'A';
@@ -37,28 +37,25 @@ char find_letter(char buffer, int i)
     return (buffer);
 }
 
-void sig_handler_win(int signal, siginfo_t *sig, void *test)
+static void sig_handler_win(int signal, siginfo_t *sig, void *stream)
 {
     (void)sig;
-    (void)test;
-    static int i = 0;
+    (void)stream;
 
     if (signal == 12) {
-        i = 1;
-        global = i;
+        global = 1;
     } else if (signal == 10) {
-        i = 2;
-        global = i;
+        global = 2;
     }
 }
 
-void cond(char buffer, game_t *game, char *str, char lt)
+static void cond(char buffer, navy_t *navy, char *str, char lt)
 {
-    print_values(buffer, game->user.crypt_sec, str);
-    game->map.map2[game->user.crypt_sec + 1][game->user.crypt] = lt;
+    print_values(buffer, navy->coord.crypt_sec, str);
+    navy->map.map_dup[navy->coord.crypt_sec + 1][navy->coord.crypt] = lt;
 }
 
-void who_kill_who(game_t *game)
+void hit_or_miss(navy_t *navy)
 {
     int sign = 0;
     char buffer = 0;
@@ -66,18 +63,16 @@ void who_kill_who(game_t *game)
 
     signal.sa_sigaction = &sig_handler_win;
     signal.sa_flags = SA_SIGINFO;
-    sigaction(10, &signal, NULL);
-    signal.sa_sigaction = &sig_handler_win;
-    signal.sa_flags = SA_SIGINFO;
     sigaction(12, &signal, NULL);
+    sigaction(10, &signal, NULL);
     while (global == 0) {
         pause();
         sign = global;
     }
-    buffer = find_letter(buffer, game->user.crypt);
+    buffer = find_letter(buffer, navy->coord.crypt);
     if (sign == 1)
-        cond(buffer, game, "hit", 'x');
+        cond(buffer, navy, "hit", 'x');
     else if (sign == 2)
-        cond(buffer, game, "missed", 'o');
+        cond(buffer, navy, "missed", 'o');
     global = 0;
 }

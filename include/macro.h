@@ -1,34 +1,29 @@
 /*
 ** EPITECH PROJECT, 2020
-** macro.h
+** navy
 ** File description:
-** macro navy
+** Macro for navy project
 */
 
-#ifndef MACRO_H
-#define MACRO_H
-
 #define RAM 2048
-#define Y_MAX game->map.y_max_pos
-#define X_MAX game->map.x_max_pos
-#define CHECK game->user.check
-#define CURSOR(y, x) game->map.map_pos[y][x]
+#define Y_MAX navy->map_pos.y_max_2
+#define X_MAX navy->map_pos.x_max_2
+#define CHECK navy->verif.check
+#define CURSOR(y, x) navy->map_pos.map2[y][x]
 #define LETTER(i) (i >= 'A' && i <= 'Z')
 #define NUMBER(i) (i >= '1' && i <= '9')
-#define J game->pos.j
-#define I game->pos.i
-#define A game->pos.a
-#define K game->pos.k
-#define NB game->pos.nb
-#define COUNT1 game->pos.count1
-#define COUNT2 game->pos.count2
+#define J navy->pos.j
+#define I navy->pos.i
+#define A navy->pos.a
+#define K navy->pos.k
+#define NB navy->pos.nb
+#define COUNT1 navy->pos.count1
+#define COUNT2 navy->pos.count2
 #define B 3
 #define C 4
 #define D 5
 #define E 6
 #define F 7
 #define H 8
-#define LINES game->coord.lines
-#define COLS game->coord.cols
-
-#endif
+#define LINES navy->coord.lines
+#define COLS navy->coord.cols

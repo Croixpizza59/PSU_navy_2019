@@ -1,65 +1,58 @@
 /*
 ** EPITECH PROJECT, 2020
-** struct.h
+** navy
 ** File description:
-** struct navy
+** structure for navy project
 */
 
-#ifndef STRUCT_H
-#define STRUCT_H
+#ifndef NAVY_STRUCT
+#define NAVY_STRUCT
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <stdbool.h>
-#include <signal.h>
-#include <string.h>
-#include <fcntl.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-
-typedef struct game game_t;
-typedef struct user user_t;
-typedef struct map map_t;
-typedef struct pos pos_t;
+typedef struct navy navy_t;
+typedef struct user1 user1_t;
+typedef struct user2 user2_t;
 typedef struct coord coord_t;
+typedef struct map_pos map_pos_t;
+typedef struct map map_t;
+typedef struct verif verif_t;
+typedef struct pos pos_t;
 
-struct user
+
+struct verif
 {
     int pid_ennemy;
-    int pid_user1;
-    int pid_user2;
-    char *pos;
-    bool check;
-    int count;
-    int nb;
-    int crypt;
-    int crypt_sec;
-    char *receptor;
-    char *type;
+    int check;
 };
 
-struct map
+struct user1
 {
-    char **map;
+    int pid_user2;
+};
+
+struct user2
+{
+    int pid_user1;
+};
+
+struct coord
+{
+    int crypt;
+    int crypt_sec;
+    int lines;
+    int cols;
+};
+
+struct map_pos
+{
     char **map2;
-    char **map_pos;
-    int x_max_pos;
-    int y_max_pos;
-    int x_max;
-    int y_max;
-    int fd;
-    int fd2;
-    int fd_pos;
-    int size;
-    int size2;
-    int size_pos;
-    int len;
-    int len2;
-    int len_pos;
-    char *buffer;
-    char *buffer2;
-    char *buffer_pos;
+    char *pos;
+    int len_2;
+    char *buffer_2;
+    int size_2;
+    int fd_2;
+    int x_max_2;
+    int y_max_2;
+
 };
 
 struct pos
@@ -71,21 +64,33 @@ struct pos
     int a;
     int count1;
     int count2;
-    int check;
 };
 
-struct coord
+struct map
 {
-    int lines;
-    int cols;
+    char **map;
+    char **map_dup;
+    int len;
+    int len_dup;
+    int size;
+    int size_dup;
+    char *buffer;
+    char *buffer_dup;
+    int fd;
+    int fd_dup;
+    int x_max;
+    int y_max;
 };
 
-struct game
+struct navy
 {
-    user_t user;
-    map_t map;
-    pos_t pos;
+    user1_t user1;
+    user2_t user2;
     coord_t coord;
+    map_pos_t map_pos;
+    map_t map;
+    verif_t verif;
+    pos_t pos;
 };
 
 #endif

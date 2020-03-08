@@ -21,7 +21,6 @@ LIB	=	$(DIR)my_length.c	\
 		$(DIR)my_str_to_word_array.c	\
 		$(DIR)to_number.c	\
 		$(DIR)total_words.c	\
-		$(DIR)my_strcat.c	\
 		$(DIR)my_strcmp.c	\
 
 CFLAGS = -Wall -Wextra -g

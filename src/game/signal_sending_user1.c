@@ -1,13 +1,13 @@
 /*
 ** EPITECH PROJECT, 2020
-** signals_checking.c
+** navy
 ** File description:
-** signals_checking
+** signal_sending.c send signal at other player
 */
 
 #include "proto.h"
 
-static int before_check(char buffer, int i)
+int find_number(char buffer, int i)
 {
     if (buffer == 'A')
         i = 2;
@@ -28,26 +28,25 @@ static int before_check(char buffer, int i)
     return (i);
 }
 
-int signal_checking(game_t *game, char buffer, char buffer_sec)
+int signal_sending_user1(navy_t *navy, char buffer, char buffer_sec)
 {
     int lines = 0;
     int colms = 0;
-    game->user.crypt = before_check(buffer, game->user.crypt);
-    game->user.crypt_sec = buffer_sec - '0';
+    navy->coord.crypt = find_number(buffer, navy->coord.crypt);
+    navy->coord.crypt_sec = buffer_sec - '0';
 
-    usleep(10000);
-    while (lines < game->user.crypt) {
-        kill(game->user.pid_user2, SIGUSR1);
+    while (lines < navy->coord.crypt) {
+        kill(navy->user1.pid_user2, SIGUSR1);
         lines++;
         usleep(10000);
     }
-    kill(game->user.pid_user2, SIGUSR2);
+    kill(navy->user1.pid_user2, SIGUSR2);
     usleep(10000);
-    while (colms < game->user.crypt_sec) {
-        kill(game->user.pid_user2, SIGUSR1);
+    while (colms < navy->coord.crypt_sec) {
+        kill(navy->user1.pid_user2, SIGUSR1);
         colms++;
         usleep(10000);
     }
-    kill(game->user.pid_user2, SIGUSR2);
+    kill(navy->user1.pid_user2, SIGUSR2);
     return (0);
 }

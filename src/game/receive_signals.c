@@ -1,15 +1,15 @@
 /*
 ** EPITECH PROJECT, 2020
-** receive_signals.c
+** navy
 ** File description:
-** receive_signals
+** receive signals of kill user player
 */
 
 #include "proto.h"
 
-void sig_handler_sec(int signal, siginfo_t *sig, void *test)
+static void sig_handler_sig2(int signal, siginfo_t *sig, void *stream)
 {
-    (void)test;
+    (void)stream;
     (void)sig;
     static int count = 0;
     static int sec = 0;
@@ -25,23 +25,23 @@ void sig_handler_sec(int signal, siginfo_t *sig, void *test)
     }
 }
 
-int receive_signal(game_t *game)
+int receive_signals(navy_t *navy)
 {
     struct sigaction signal;
-    signal.sa_sigaction = &sig_handler_sec;
+
+    my_putstr("waiting for ennemy's attack...\n");
+    signal.sa_sigaction = &sig_handler_sig2;
     signal.sa_flags = SA_RESTART;
-    sigaction(10, &signal, NULL);
-    signal.sa_sigaction = &sig_handler_sec;
-    signal.sa_flags = SA_RESTART;
-    sigaction(12, &signal, NULL);
     while (global == 0) {
-        pause();
-        game->coord.lines = global;
+        sigaction(10, &signal, NULL);
+        sigaction(12, &signal, NULL);
+        navy->coord.lines = global;
     }
     global = 0;
     while (global == 0) {
-        pause();
-        game->coord.cols = global + 1;
+        sigaction(10, &signal, NULL);
+        sigaction(12, &signal, NULL);
+        navy->coord.cols = global + 1;
     }
     global = 0;
     return (0);

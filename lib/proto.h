@@ -25,7 +25,6 @@ void my_putstr(char const *);
 char *my_strdup(char *src);
 char *my_str_ret(char *str, int src);
 char **str_to_word_array(char const *str);
-char *my_strcat(char *str1, char *str2);
 int total_words(char const *str);
 int my_strncmp(char *s1, char *s2, int n);
 int my_strcmp(char const *str, char const *to_find);

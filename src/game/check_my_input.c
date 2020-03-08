@@ -1,13 +1,13 @@
 /*
 ** EPITECH PROJECT, 2020
-** check_my_buffer.c
+** navy
 ** File description:
-** check_my_buffer
+** check_my_input
 */
 
 #include "proto.h"
 
-int check_my_buffer(char *buffer)
+int check_my_input(char *buffer)
 {
     int lenght = 0;
 

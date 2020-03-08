@@ -1,13 +1,13 @@
 /*
 ** EPITECH PROJECT, 2020
-** PSU_navy_2019
+** navy
 ** File description:
-** checking_lenght
+** checking_lenght check lenght of positions
 */
 
 #include "proto.h"
 
-bool checking_lenght(game_t *game)
+bool checking_lenght(navy_t *navy)
 {
     int x = 0;
     bool check = false;
